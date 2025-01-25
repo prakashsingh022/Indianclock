@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+@keyframes complex-animation {
+    0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+        border-color: rgb#0870ad;
+    }
+
+    25% {
+        transform: scale(1.1) rotate(10deg);
+        opacity: 0.8;
+        border-color: red;
+    }
+
+    50% {
+        transform: scale(1.2) rotate(-10deg);
+        opacity: 0.6;
+        border-color: white;
+    }
+
+    75% {
+        transform: scale(1.1) rotate(10deg);
+        opacity: 0.8;
+        border-color: green;
+    }
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.imag img {
+    height: 20vh;
+    width: 40vw;
+    margin-bottom: 150px;
+    border: 5px dotted black;
+    border-radius: 50px;
+    margin-top: 50px;
+    animation: complex-animation 5s infinite ease-in-out;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: black;
+
+}
+
+#time {
+    display: flex;
+    gap: 40px;
+
+}
+
+
+#time .circle {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#time .circle svg {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform: rotate(270deg);
+}
+
+#time .circle svg circle {
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    stroke: #191919;
+    stroke-width: 4;
+    transform: translate(5px, 5px);
+}
+
+#time .circle:nth-child(1) {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('narangi.jpeg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+
+#time .circle svg circle:nth-child(2) {
+    stroke: var(--clr);
+    stroke-dasharray: 440;
+}
+
+#time .circle:nth-child(2) {
+    background-image: url(IMG_9955.JPG);
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+
+}
+
+#time .circle:nth-child(3) {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('green.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+
+#time div {
+    position: absolute;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+#time div span {
+    position: absolute;
+    transform: translateX(-50%) translateY(-10px);
+    font-size: 0.35em;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+#time .ap {
+    position: relative;
+    font-size: 1em;
+    transform: translateX(-20px);
+}
+
+.dots {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+
+}
+
+.dots::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    width: 15px;
+    height: 15px;
+    background: var(--clr);
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--clr),
+        0 0 60px var(--clr);
+}
