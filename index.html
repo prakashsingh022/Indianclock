@@ -2,45 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Prakash Digital Clock|</title>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NLKB01W0XN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prakash Digital Clock - A modern, stylish digital clock with real-time updates.">
+    <meta name="keywords" content="digital clock, live clock, Prakash clock, real-time clock, JavaScript clock">
+    <meta name="author" content="Prakash">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Prakash Digital Clock">
+    <meta property="og:description" content="A stylish digital clock with real-time updates.">
+    <meta property="og:image" content="image.png">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
 
-  gtag('config', 'G-NLKB01W0XN');
-</script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NLKB01W0XN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NLKB01W0XN');
+    </script>
+
+    <title>Prakash Digital Clock</title>
     <link rel="stylesheet" href="clock.css">
 </head>
 <body>
     <div class="imag">
-        <img src="image.png" alt="">
+        <img src="image.png" alt="Digital Clock Logo">
     </div>
     <div id="time">
         <div class="circle" style="--clr:#ffff;">
             <div class="dots hr_dot"></div>
-         <svg>
-            <circle cx="70" cy="70" r="70"></circle>
-            <circle cx="70" cy="70" r="70" id="hh"></circle>
-         </svg>   
+            <svg>
+                <circle cx="70" cy="70" r="70"></circle>
+                <circle cx="70" cy="70" r="70" id="hh"></circle>
+            </svg>   
             <div id="hours">00</div>
         </div>
-        <div class="circle"  style="--clr:#046A38;" >
+        <div class="circle" style="--clr:#046A38;">
             <div class="dots min_dot"></div>
             <svg>
-               <circle cx="70" cy="70" r="70"></circle>
+                <circle cx="70" cy="70" r="70"></circle>
                 <circle cx="70" cy="70" r="70" id="mm"></circle>
-             </svg>  
+            </svg>  
             <div id="minutes">00</div>
         </div>
-        <div class="circle"  style="--clr:#FF671F;;">
+        <div class="circle" style="--clr:#FF671F;">
             <div class="dots sec_dot"></div>
-           <svg>
+            <svg>
                 <circle cx="70" cy="70" r="70"></circle>
                 <circle cx="70" cy="70" r="70" id="ss"></circle>
-             </svg>
+            </svg>
             <div id="seconds">00</div>
         </div>
         <div class="ap">
@@ -63,7 +76,6 @@
             let min_dot = document.querySelector('.min_dot');
             let sec_dot = document.querySelector('.sec_dot');
 
-
             let h = new Date().getHours();
             let m = new Date().getMinutes();
             let s = new Date().getSeconds(); 
@@ -72,7 +84,7 @@
             if (h > 12) {
                 h = h - 12;
             } else if (h === 0) {
-                h = 12; // Handle midnight (00:00) as 12:00 AM
+                h = 12;
             }
 
             h = (h < 10) ? "0" + h : h;
@@ -80,20 +92,18 @@
             s = (s < 10) ? "0" + s : s;
 
             hours.innerHTML = h + "<br><span>Hours</span>"; 
-            minutes.innerHTML = m + "<br><span>Minuts</span>"; 
+            minutes.innerHTML = m + "<br><span>Minutes</span>"; 
             seconds.innerHTML = s + "<br><span>Seconds</span>"; 
             ampm.innerHTML = am;
 
-              hh.style.strokeDashoffset = 440 - (440 * h) / 12;
-              mm.style.strokeDashoffset = 440 - (440 * m) / 60;
-              ss.style.strokeDashoffset = 440 - (440 * s) / 60;
+            hh.style.strokeDashoffset = 440 - (440 * h) / 12;
+            mm.style.strokeDashoffset = 440 - (440 * m) / 60;
+            ss.style.strokeDashoffset = 440 - (440 * s) / 60;
 
-              hr_dot.style.transform = 'rotate(${h * 30}deg)';
-              min_dot.style.transform = 'rotate(${m * 6}deg)';
-              sec_dot.style.transform = 'rotate(${s * 6}deg)';
-        })
-         
-        
+            hr_dot.style.transform = `rotate(${h * 30}deg)`;
+            min_dot.style.transform = `rotate(${m * 6}deg)`;
+            sec_dot.style.transform = `rotate(${s * 6}deg)`;
+        }, 1000);
     </script>
 </body>
 </html>
